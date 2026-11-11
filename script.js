@@ -137,7 +137,7 @@ heroCard?.addEventListener("pointermove", (event) => {
   const y = (event.clientY - bounds.top) / bounds.height - 0.5;
   heroCard.style.setProperty("--mx", `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
   heroCard.style.setProperty("--my", `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
-  heroCard.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${y * -7}deg) translateY(-4px)`;
+  heroCard.style.transform = `perspective(900px) rotateY(${x * 2}deg) rotateX(${y * -2}deg) translateY(-2px)`;
 });
 
 heroCard?.addEventListener("pointerleave", () => {
