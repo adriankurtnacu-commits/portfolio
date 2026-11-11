@@ -60,7 +60,7 @@ h1 em, h2 em { color: var(--red); font-family: var(--serif); font-weight: 400; l
 .button-quiet { border: 1px solid var(--line); }
 .hero-meta { display: flex; gap: 13px; margin-top: 44px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
 .meta-separator { color: var(--gold); }
-.hero-card { position: relative; min-height: 440px; padding: 29px; overflow: hidden; color: #fff; background: var(--red-dark); box-shadow: 17px 17px 0 var(--gold); animation: float-card 6s ease-in-out infinite; transition: transform .18s ease-out; }
+.hero-card { position: relative; min-height: 440px; padding: 29px; overflow: hidden; color: #fff; background: var(--red-dark); box-shadow: 17px 17px 0 var(--gold); animation: none; transition: transform .45s ease-out; }
 .hero-card:after { position: absolute; right: -80px; bottom: -100px; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 38px rgba(255,255,255,.03), 0 0 0 78px rgba(255,255,255,.03); content: ""; }
 .card-topline, .card-footer { display: flex; justify-content: space-between; color: #e3b8a8; font: 10px var(--font); letter-spacing: .15em; }
 .card-orbit { color: var(--gold); font-size: 18px; }
@@ -76,7 +76,7 @@ h1 em, h2 em { color: var(--red); font-family: var(--serif); font-weight: 400; l
 .card-footer { position: absolute; right: 29px; bottom: 25px; left: 29px; }
 .card-footer span { color: var(--gold); padding: 0 8px; }
 .skill-marquee { width: 100%; overflow: hidden; color: var(--red-dark); background: var(--gold); }
-.marquee-track { display: flex; width: max-content; align-items: center; gap: 27px; padding: 15px 0; animation: marquee 65s linear infinite; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.marquee-track { display: flex; width: 100%; justify-content: center; align-items: center; flex-wrap: wrap; gap: 14px 27px; padding: 15px 24px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .marquee-track i { color: var(--red); font-style: normal; }
 .work-section { padding: 90px 0 115px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 54px; }
@@ -207,7 +207,7 @@ body::after { position: fixed; z-index: 90; inset: 0; pointer-events: none; opac
 .spotlight { position: fixed; z-index: 0; top: 0; left: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px; pointer-events: none; border-radius: 50%; background: radial-gradient(circle, rgba(243,187,53,.14), transparent 65%); }
 main, .site-header { position: relative; z-index: 1; }
 .hero-card { animation: none; will-change: transform; transform-style: preserve-3d; }
-.hero-card:not(:hover) { animation: float-card 12s ease-in-out infinite; }
+.hero-card:not(:hover) { animation: none; }
 .hero-card::before { position: absolute; z-index: 3; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(255,255,255,.18), transparent 45%); content: ""; }
 h1 em, h2 em { background: linear-gradient(100deg, var(--red), var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .rotating-word { position: relative; }
@@ -223,7 +223,7 @@ h1 em, h2 em { background: linear-gradient(100deg, var(--red), var(--gold)); -we
 .project-links a:hover { color: #fff; border-color: var(--red); background: var(--red); }
 .capability { position: relative; overflow: hidden; border-radius: 14px; transition: transform .35s, border-color .35s, background .35s; }
 .capability::before { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(243,187,53,.16), transparent 60%); transition: opacity .3s; content: ""; }
-.capability:hover { border-color: var(--gold); transform: translateY(-8px); }
+.capability:hover { border-color: var(--gold); transform: translateY(-3px); }
 .capability:hover::before { opacity: 1; }
 .capability-icon { transition: transform .35s; }
 .capability:hover .capability-icon { transform: rotate(-12deg) scale(1.12); }
@@ -239,5 +239,5 @@ h1 em, h2 em { background: linear-gradient(100deg, var(--red), var(--gold)); -we
 .modal-fallback { display: none; margin: 0; padding: 14px 24px; color: var(--muted); font-size: 12px; }
 .modal-fallback a { color: var(--red); font-weight: 700; text-decoration: underline; }
 @media (pointer: coarse) { .modal-fallback { display: block; } }
-@media (max-width: 800px) { .spotlight { display: none; } .footer-contact { display: grid; gap: 12px; margin-top: 25px; } }
+@media (max-width: 800px) { .spotlight { display: none; } .footer-contact { display: grid; gap: 12px; margin-top: 25px; } .marquee-track { justify-content: flex-start; } }
 @media (prefers-reduced-motion: reduce) { .spotlight, body::after { display: none; } .rotating-word::after { animation: none; } }
