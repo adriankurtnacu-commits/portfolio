@@ -67,7 +67,7 @@ h1 em, h2 em { color: var(--red); font-family: var(--serif); font-weight: 400; l
 .profile-initials { position: relative; z-index: 1; margin: 63px 0 35px; color: var(--gold); font: 700 clamp(80px, 14vw, 150px) var(--font); letter-spacing: -.12em; }
 .profile-photo-wrap { position: absolute; z-index: 2; top: 72px; right: 40px; width: 170px; height: 190px; transform: rotate(4deg); }
 .profile-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; border: 7px solid #fff; box-shadow: 8px 8px 0 var(--gold); filter: saturate(.9); }
-.photo-ring { position: absolute; right: -25px; bottom: -25px; width: 75px; height: 75px; border: 1px solid var(--gold); border-radius: 50%; animation: spin 20s linear infinite; }
+.photo-ring { position: absolute; right: -25px; bottom: -25px; width: 75px; height: 75px; border: 1px solid var(--gold); border-radius: 50%; }
 .card-quote { position: relative; z-index: 1; max-width: 250px; margin: 0 0 55px; font: italic 25px/1.22 var(--serif); }
 .card-stat-row { position: relative; z-index: 1; display: flex; gap: 25px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
 .card-stat-row div { display: grid; gap: 3px; }
@@ -88,7 +88,7 @@ h2 { font-size: clamp(37px, 5vw, 62px); }
 .project-wide { grid-column: 1 / -1; grid-template-columns: 1.15fr .85fr; gap: 42px; align-items: center; }
 .project-image { overflow: hidden; background: #e7ddd0; }
 .project-image img { display: block; width: 100%; height: auto; aspect-ratio: 1.8 / 1; object-fit: cover; transition: transform .5s ease; }
-.project-card:hover .project-image img { transform: scale(1.035); }
+.project-card:hover .project-image img { transform: none; }
 .project-wide .project-image img { aspect-ratio: 1.65 / 1; }
 .project-info { position: relative; }
 .project-number { margin-bottom: 12px; color: var(--red); font: 11px var(--font); letter-spacing: .12em; }
@@ -211,7 +211,7 @@ main, .site-header { position: relative; z-index: 1; }
 .hero-card::before { position: absolute; z-index: 3; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(255,255,255,.18), transparent 45%); content: ""; }
 h1 em, h2 em { background: linear-gradient(100deg, var(--red), var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .rotating-word { position: relative; }
-.rotating-word::after { position: absolute; right: 0; bottom: .04em; left: 0; height: .12em; background: var(--gold); transform-origin: left; animation: underline 5.2s ease-in-out infinite; content: ""; }
+.rotating-word::after { position: absolute; right: 0; bottom: .04em; left: 0; height: .12em; background: var(--gold); content: ""; }
 @keyframes underline { 0% { transform: scaleX(0); } 40%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0); transform-origin: right; } }
 .button, .nav-cta { position: relative; overflow: hidden; will-change: transform; }
 .button::after, .nav-cta::after { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%); transform: translateX(-120%); transition: transform .6s; content: ""; }
@@ -223,10 +223,10 @@ h1 em, h2 em { background: linear-gradient(100deg, var(--red), var(--gold)); -we
 .project-links a:hover { color: #fff; border-color: var(--red); background: var(--red); }
 .capability { position: relative; overflow: hidden; border-radius: 14px; transition: transform .35s, border-color .35s, background .35s; }
 .capability::before { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(243,187,53,.16), transparent 60%); transition: opacity .3s; content: ""; }
-.capability:hover { border-color: var(--gold); transform: translateY(-3px); }
-.capability:hover::before { opacity: 1; }
+.capability:hover { border-color: var(--gold); transform: none; }
+.capability:hover::before { opacity: 0; }
 .capability-icon { transition: transform .35s; }
-.capability:hover .capability-icon { transform: rotate(-12deg) scale(1.12); }
+.capability:hover .capability-icon { transform: none; }
 .timeline { position: relative; display: grid; gap: 0; margin-top: 30px; padding-left: 28px; }
 .timeline::before { position: absolute; top: 6px; bottom: 6px; left: 5px; width: 2px; background: linear-gradient(var(--gold), var(--red)); content: ""; }
 .timeline article { position: relative; padding: 0 0 28px; }
